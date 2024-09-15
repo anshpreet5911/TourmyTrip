@@ -104,18 +104,17 @@
             </div>
 
             <!--FORM-->
-            <div class="flight-panel">
+            <div class="flight-panel" id="Flight-panel">
                 <div class="trip-type">
                     <form class="trip-type-1">
-                        <input type="radio" id="option1" name="choice" value="option1">
+                        <input type="radio" id="option1" name="choice" value="option1" onclick="showForm('Round-trip')">
                         <label for="option1">Round Trip</label><br>
 
-                        <input type="radio" id="option2" name="choice" value="option2">
+                        <input type="radio" id="option2" name="choice" value="option2"  onclick="showForm('oneWayForm')">
                         <label for="option2">One Way</label><br>
 
-                        <input type="radio" id="option3" name="choice" value="option3">
+                        <input type="radio" id="option3" name="choice" value="option3"  onclick="showForm('MultiWayForm')">
                         <label for="option3">Multi-City</label><br>
-
 
                     </form>
 
@@ -131,14 +130,23 @@
 
 
 
-                <form action="/submit-booking" method="post" class="passenger-form">
+                <form action="submit-booking" method="post" class="passenger-form form-section" id="Round-trip">
                     <!-- Departure Destination -->
                     <label for="departure"></label>
-                    <input type="text" id="departure" name="departure" placeholder="From Where?" required>
+                    <input type="text" id="departure" name="departure" placeholder="From Where?" oninput="showDropdown('departure-dropdown')" required>
+                    <div id="departure-dropdown" class="dropdown-content">
+                        <p onclick="selectOption('departure', 'New York')">New York</p>
+                        <p onclick="selectOption('departure', 'Los Angeles')">Los Angeles</p>
+                        <p onclick="selectOption('departure', 'Chicago')">Chicago</p>
+                    </div>
 
                     <!-- Arrival Destination -->
-                    <label for="arrival"></label>
-                    <input type="text" id="arrival" name="arrival" placeholder="To Where?" required>
+                    <input type="text" id="arrival" name="arrival" placeholder="To Where?"  oninput="showDropdown('arrival-dropdown')" required>
+                    <div id="arrival-dropdown" class="dropdown-content">
+                        <p onclick="selectOption('arrival', 'New York')">New York</p>
+                        <p onclick="selectOption('arrival', 'Los Angeles')">Los Angeles</p>
+                        <p onclick="selectOption('arrival', 'Chicago')">Chicago</p>
+                    </div>
 
                     <!-- Departure Date -->
                     <label for="departure-date"></label>
@@ -153,13 +161,69 @@
                     <input type="number" id="travellers" name="travellers" min="1" max="10" required>
 
                     <!-- Submit Button -->
-                    <input type="submit" value="Search Flights" id="Search-flight">
+                    <input type="submit" value="Search Flights" id="Search-flight" name="search">
                 </form>
+
+
+                <!--------------One WAY FORM--------------->
+                
+                <div id="oneWayForm" class="form-section">
+                
+                    <form>
+                        <input type="text" id="departure" name="fromOneWay">
+                
+                        
+                        <input type="text" id="arrival" name="toOneWay">
+                
+                        
+                        <input type="date" id="departure-date" name="departOneWay">
+
+                        <input type="number" id="travellers" name="travellers" min="1" max="10" required>
+                
+                        <input type="submit" value="Search Flight" id="Search-flight">
+                    </form>
+                </div>
+                
+                <!--------------Multi WAY FORM----------->
+                
+                <div id="MultiWayForm" class="form-section">
+                   
+                    <form>
+                        
+                        <input type="text" id="departure" name="fromMulti">
+                
+                        
+                        <input type="text" id="arrival" name="toMulti">
+                
+                       
+                        <input type="date" id="departure-date" name="departMulti">
+                
+                        <input type="submit" value="Search flight" id="Search-flight"><br><br>
+
+                        <input type="text" id="departure" name="fromMulti">
+                        
+                        
+                        <input type="text" id="arrival" name="toMulti">
+                        
+                        
+                        <input type="date" id="departure-date" name="departMulti"><br><br>
+
+                        <input type="text" id="departure" name="fromMulti">
+                        
+                        
+                        <input type="text" id="arrival" name="toMulti">
+                        
+                        
+                        <input type="date" id="departure-date" name="departMulti">
+                        
+                    </form>
+                </div>
+
+
 
                 <div class="search">
                     <input type="text" placeholder="Search Preferred Airlines" class="search-airline">
                 </div>
-
 
 
             </div>
@@ -371,6 +435,46 @@
                     </div>
                     <div class="trip-text">Similar trip cost to New York City</div>
                 </div>
+
+                <div class="trip1 card">
+                    <img src="images/trip.jpg" alt="" height="215px" width="100%" style="border-radius: 20px 20px 0 0;">
+                
+                    <div class="trip-content">
+                        <div class="trip-date">
+                            <span class="city">New York</span><br>
+                            <span class="date">Oct 31 - Dec 03</span><br>
+                            <span class="route">DEL - NYC</span>
+                        </div>
+                
+                        <div class="trip-price">
+                            <span class="city">$750</span><br>
+                            <span class="route">Round Trip </span>
+                        </div>
+                
+                
+                    </div>
+                    <div class="trip-text">Similar trip cost to New York City</div>
+                </div>
+
+                <div class="trip1 card">
+                    <img src="images/trip.jpg" alt="" height="215px" width="100%" style="border-radius: 20px 20px 0 0;">
+                
+                    <div class="trip-content">
+                        <div class="trip-date">
+                            <span class="city">New York</span><br>
+                            <span class="date">Oct 31 - Dec 03</span><br>
+                            <span class="route">DEL - NYC</span>
+                        </div>
+                
+                        <div class="trip-price">
+                            <span class="city">$750</span><br>
+                            <span class="route">Round Trip </span>
+                        </div>
+                
+                
+                    </div>
+                    <div class="trip-text">Similar trip cost to New York City</div>
+                </div>
             </div>
 
         </div>
@@ -474,13 +578,61 @@
 
     </main>
 
+<script>
+    function showForm(formId) {
+        // Hide all form sections
+        var forms = document.getElementsByClassName('form-section');
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].style.display = 'none';
+        }
+
+        // Show the selected form
+        document.getElementById(formId).style.display = 'block';
+
+        // Get the flight panel element
+        var flightPanel = document.getElementById('Flight-panel');
+
+        // Adjust the flight panel height based on the selected form
+        if (formId === 'MultiWayForm') {
+            flightPanel.classList.add('expanded');
+        } else {
+            flightPanel.classList.remove('expanded');
+        }
+    }
+
+    // Show the One Way form by default when the page loads
+    window.onload = function () {
+        showForm('oneWayForm');
+    };
+</script>
+
+<script>
+    function showDropdown(dropdownId) {
+        // Hide all dropdowns
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].style.display = 'none';
+        }
+
+        // Show the specific dropdown for the input
+        document.getElementById(dropdownId).style.display = 'block';
+    }
+
+     function selectOption(inputId, value) {
+            // Set the selected value into the input field
+            document.getElementById(inputId).value = value;
+
+            // Hide the dropdown after selection
+            document.getElementById(inputId + '-dropdown').style.display = 'none';
+        }
 
 
-
-
-
-
-
+      window.onclick = function (event) {
+            if (!event.target.matches('input')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = 'none';}}}
+    </script>
 </body>
 
 </html>

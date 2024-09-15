@@ -147,9 +147,13 @@ a.panel{
     margin-right: 200%;
     gap: 10px;
     align-items: center;
-    height: 184px;
+    height: 200px;
     border-radius: 0 0 10px 10px;
  
+}
+
+.expanded{
+    height: 350px;
 }
 
 .trip-type{
@@ -171,42 +175,61 @@ a.panel{
 
 
 .passenger-form{
+    display: none;
     position: relative;
     background-color: white;
     gap: 500px;
-    width: 80%;
+    width: 90%;
     margin-right: 45px;
     margin-left: 45px;
     margin-top: 10px;
 
 }
 
+#MultiWayForm{
+    margin-left: 3%;
+    margin-top: 15px;
+    background-color: white;
+   
+    
+    
+}
+
+#oneWayForm{
+    margin-left: 3%;
+    margin-top: 15px;
+    display: none;
+}
+
 #departure{
-    height: 40px;
-    width: 288px;
+    height: 60px;
+    width: 320px;
+    margin-right: 20px;
     border: 1px solid #73767f;
     padding: 16px 36px 16px 44px;
     font-size: 1rem;
 }
 
 #arrival{
-    height: 40px;
-    width: 288px;
+    height: 60px;
+    width: 320px;
+    margin-right: 20px;
     border: 1px solid #73767f;
     padding: 16px 36px 16px 44px;
     font-size: 1rem;
 }
 
 #departure-date{
-    height: 40px;
-    width: 146px;
+    height: 60px;
+    width: 200px;
+    margin-right: 20px;
     border: 1px solid #73767f;
     padding: 16px 10px 16px 44px;
     font-size: 1rem;
 }
 
 #return-date{
-    height: 40px;
+    height: 60px;
     width: 146px;
     border: 1px solid #73767f;
     padding: 16px 10px 16px 44px;
@@ -214,20 +237,45 @@ a.panel{
 }
 
 #travellers{
-    height: 40px;
-    width: 134px;
+    height: 60px;
+    width: 200px;
     border: 1px solid #73767f;
      padding: 16px 0.8px 16px 44px;
      font-size: 1rem;
 }
 
 #Search-flight{
-    height: 73px;
-    width: 150px;
-    font-size: 1rem;
+    height: 60px;
+    width: 190px;
+    font-size: 1.5rem;
     background-color: #ff4600;
     color: white;
     font-weight: 900;
+    border-color: #ff4600;
+}
+
+#Round-trip input[name="departure"]{
+    width: 250px;
+    margin-right: 5px;
+}
+
+#Round-trip input[name="arrival"]{
+    width: 250px;
+    margin-right: 5px;
+}
+#Round-trip input[name="departure-date"]{
+    width: 150px;
+    margin-right: 5px;
+}
+
+#Round-trip input[name="return-date"]{
+    width: 200px;
+    margin-right: 5px;
+}
+
+#Round-trip input[name="search"]{
+    width: 160px;
+    font-size: 1.3rem;
 }
 
 input{
@@ -335,12 +383,66 @@ input{
     margin-bottom: 20px;
 }
 
+
+ .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ddd;
+        z-index: 1;
+        max-height: 150px; /* Limit the height of the dropdown */
+        overflow-y: auto; /* Add scroll if the dropdown is too tall */
+        width: 200px; /* Match the width of the input */
+    }
+
+#departure-dropdown {
+    top: 100%; /* Position below the departure input */
+    left: .5%;
+    width: 17%;
+}
+
+#arrival-dropdown {
+    top: 100%; /* Position below the arrival input */
+    left: 19.5%;
+    width: 17%;
+}
+
+
+.flight-form{
+   background-color: white;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    padding-top: 10px;
+}
+
+#modify-trip input[name="departure"]{
+    width: 400px;
+}
+
+#modify-trip input[name="arrival"]{
+    width: 400px;
+}
+
+#modify-trip input[name="departure-date"]{
+ width: 200px;
+}
+
+#modify-trip input[name="return-date"]{
+    width: 200px;
+    margin-right: 10px;
+}
+
+#modify-trip input[name="travellers"]{
+    margin-right: 5px;
+}
+
 /********explore trips*****/
 
 .explore-trips{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-columns: repeat(4, 1fr); /* 3 columns */
     grid-template-rows: repeat(2, auto); /* 2 rows */
     row-gap: 0px; /* Space between grid items */
     background-color: white;
@@ -398,7 +500,7 @@ footer{
 
 
 /**************MEDIA QUERYYY*************/
-@media screen and (max-width: 1950px) {
+@media screen and (max-width: 1800px) {
 
 #departure{
     height: 40px;
@@ -431,7 +533,7 @@ footer{
 }
 
 #Search-flight{
-    height: 73px;
+    height: 60px;
     width: 130px;
     font-size: .8rem;
     
@@ -504,13 +606,12 @@ footer{
 /********Flight css********/
 .filter-container{
     width: 20%;
-    border: 1px solid #73767f;
     padding: 0px 10px 10px 10px;
-    background-color: white;
 }
 
 .amount{
     float: right;
+    font-weight: 200;
 }
 
 
@@ -544,9 +645,13 @@ tr,td{
     flex-basis: 75%;
 }
 
+.airline{
+    padding-top: 30px;
+}
+
 .airline-container{
     display: flex;
-    gap: 200px;
+    gap: 150px;
     margin-left: 20px;
     margin-top: 30px;
 }
@@ -555,11 +660,11 @@ tr,td{
     height: 30%;
     width: 80%;
     display: flex;
-    gap: 20%;
-    border: 1px solid #73767f;
+    gap: 10%;
     margin-left: 11px;
     margin-top: 20px;
     background-color: white;
+    border-radius: 15px;
 
 }
 
@@ -591,6 +696,10 @@ tr,td{
     font-weight: 900;
 }
 
+.info{
+    width: 270px;
+}
+
 .min{
     color: blue;
     font-weight: 900;
@@ -605,6 +714,10 @@ tr,td{
     outline: none;
     border: none;
     border-radius: 10px;
+}
+
+.flight-times{
+    margin: 25px 0;
 }
 
 

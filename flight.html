@@ -74,10 +74,49 @@
             </div>
         </div>
     </nav>
+
+    
 </header>
 
 <!--------------------FILTER------------------->
 <main>
+
+    <form action="submit-booking" method="post" class="flight-form form-section" id="modify-trip">
+        <!-- Departure Destination -->
+        <label for="departure"></label>
+        <input type="text" id="departure" name="departure" placeholder="From Where?"
+            oninput="showDropdown('departure-dropdown')" required>
+        <div id="departure-dropdown" class="dropdown-content">
+            <p onclick="selectOption('departure', 'New York')">New York</p>
+            <p onclick="selectOption('departure', 'Los Angeles')">Los Angeles</p>
+            <p onclick="selectOption('departure', 'Chicago')">Chicago</p>
+        </div>
+    
+        <!-- Arrival Destination -->
+        <input type="text" id="arrival" name="arrival" placeholder="To Where?" oninput="showDropdown('arrival-dropdown')"
+            required>
+        <div id="arrival-dropdown" class="dropdown-content">
+            <p onclick="selectOption('arrival', 'New York')">New York</p>
+            <p onclick="selectOption('arrival', 'Los Angeles')">Los Angeles</p>
+            <p onclick="selectOption('arrival', 'Chicago')">Chicago</p>
+        </div>
+    
+        <!-- Departure Date -->
+        <label for="departure-date"></label>
+        <input type="date" id="departure-date" name="departure-date" required>
+    
+        <!-- Return Date -->
+        <label for="return-date"></label>
+        <input type="date" id="return-date" name="return-date">
+    
+        <!-- Number of Travelers -->
+        <label for="travellers"></label>
+        <input type="number" id="travellers" name="travellers" min="1" max="10" required>
+    
+        <!-- Submit Button -->
+        <input type="submit" value="Search Flights" id="Search-flight" name="search">
+    </form>
+
 
     <div class="main-container parent">
       
@@ -159,7 +198,7 @@
             <div class="airline">
             <div class="airline-container">
 
-                <div>
+                <div class="info">
                 <span class="name">United Airlines</span>
                 <span class="stops">2 Stops</span>
                 <span class="timings">30h 22m</span>
@@ -182,7 +221,7 @@
             </div>
 
             <div class="airline-container">
-                <div class="div">
+                <div class="info">
                     <span class="name">United Airlines</span>
                     <span class="stops">2 Stops</span>
                     <span class="timings">30h 22m</span>
@@ -199,26 +238,146 @@
                     <div>
                         <span class="time">11:35pm</span><br>
                         <span>DEL </span>
-                    </div>
-            
-            
-            
-            
+                    </div>          
                 </div>
             </div>
             </div>
             
 
-        <div class="price-container">
-            <span class="price">USD 1663</span>
-            <span class="min">As low as 149$</span>
-            <span>Price per person</span>
-            <span>(incl taxes & fees)</span>
-            <button class="price-btn">SELECT ></button>
-        </div>
+            <div class="price-container">
+                <span class="price">USD 1663</span>
+                <span class="min">As low as 149$</span>
+                <span>Price per person</span>
+                <span>(incl taxes & fees)</span>
+                <button class="price-btn">SELECT ></button>
+            </div>
 
           
 
+        </div>
+
+        <div class="airline-panel">
+            <div class="airline">
+                <div class="airline-container">
+        
+                    <div class="info">
+                        <span class="name">United Airlines</span>
+                        <span class="stops">2 Stops</span>
+                        <span class="timings">30h 22m</span>
+                    </div>
+        
+                    <div class="trip-time">
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span> <br>
+                        </div>
+        
+                        <span>-----</span><br>
+        
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <div class="airline-container">
+                    <div class="info">
+                        <span class="name">United Airlines</span>
+                        <span class="stops">2 Stops</span>
+                        <span class="timings">30h 22m</span>
+                    </div>
+        
+                    <div class="trip-time">
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span> <br>
+                        </div>
+        
+                        <span>-----</span><br>
+        
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <div class="price-container">
+                <span class="price">USD 1663</span>
+                <span class="min">As low as 149$</span>
+                <span>Price per person</span>
+                <span>(incl taxes & fees)</span>
+                <button class="price-btn">SELECT ></button>
+            </div>
+        
+        
+        
+        </div>
+
+        <div class="airline-panel">
+            <div class="airline">
+                <div class="airline-container">
+        
+                    <div class="info">
+                        <span class="name">United Airlines</span>
+                        <span class="stops">2 Stops</span>
+                        <span class="timings">30h 22m</span>
+                    </div>
+        
+                    <div class="trip-time">
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span> <br>
+                        </div>
+        
+                        <span>-----</span><br>
+        
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <div class="airline-container">
+                    <div class="info">
+                        <span class="name">United Airlines</span>
+                        <span class="stops">2 Stops</span>
+                        <span class="timings">30h 22m</span>
+                    </div>
+        
+                    <div class="trip-time">
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span> <br>
+                        </div>
+        
+                        <span>-----</span><br>
+        
+                        <div>
+                            <span class="time">11:35pm</span><br>
+                            <span>DEL </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <div class="price-container">
+                <span class="price">USD 1663</span>
+                <span class="min">As low as 149$</span>
+                <span>Price per person</span>
+                <span>(incl taxes & fees)</span>
+                <button class="price-btn">SELECT ></button>
+            </div>
+        
+        
+        
         </div>
         </div>
     </div>
