@@ -1002,10 +1002,13 @@ td {
   position: absolute; /* Make the dropdown appear right below the input */
   z-index: 1000; /* Ensure the dropdown appears above other content */
   max-height: 200px; /* Limit height */
-  overflow-y: auto; /* Add scroll if content exceeds height */
-  width: 100%; /* Make it the same width as the input */
+  overflow-y: hidden; /* Add scroll if content exceeds height */
+  width: 115%; /* Make it the same width as the input */
 }
 
+.suggestions-dropdown:hover {
+    overflow-y: auto; /* Enable scrolling when hovered */
+}
 .suggestions-dropdown li {
   padding: 10px;
   cursor: pointer;
