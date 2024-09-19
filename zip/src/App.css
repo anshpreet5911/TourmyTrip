@@ -1002,12 +1002,19 @@ td {
   position: absolute; /* Make the dropdown appear right below the input */
   z-index: 1000; /* Ensure the dropdown appears above other content */
   max-height: 200px; /* Limit height */
-  overflow-y: hidden; /* Add scroll if content exceeds height */
-  width: 115%; /* Make it the same width as the input */
+  overflow: hidden;
+  overflow-y: scroll; /* Add scroll if content exceeds height */
+  width: 150%; /* Make it the same width as the input */
+}
+
+.suggestions-dropdown::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar for Webkit browsers */
+  background: transparent; /* Optional: make scrollbar invisible */
 }
 
 .suggestions-dropdown:hover {
-    overflow-y: auto; /* Enable scrolling when hovered */
+     /* Enable scrolling when hovered */
+    color: rgb(68, 115, 154);
 }
 .suggestions-dropdown li {
   padding: 10px;
@@ -1022,3 +1029,4 @@ td {
 .suggestions-dropdown li:hover {
   background-color: #f0f0f0; /* Change background on hover */
 }
+

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlane,faLocationDot } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const RoundTrip = () => {
   // State variables for user input
@@ -13,6 +17,9 @@ const RoundTrip = () => {
   const [airports, setAirports] = useState([]);
   const [filteredDepartures, setFilteredDepartures] = useState([]);
   const [filteredArrivals, setFilteredArrivals] = useState([]);
+
+  
+
 
   // Fetch data from APIs when the component mounts
   useEffect(() => {
@@ -81,6 +88,12 @@ const RoundTrip = () => {
           <div className="row" id="round-trip-form-start">
             {/* Departure Input */}
             <div className="col-md-2">
+              <div style={{ position: 'absolute', height:'100px' }}>
+                <FontAwesomeIcon 
+                  icon={faLocationDot} 
+                  style={{ position: 'absolute', marginLeft:'8px', left: '10px', top: '19%', transform: 'translateY(-50%)', color: '#333' }}
+                />
+                </div>
               <input
                 type="text"
                 id="departure"
@@ -94,10 +107,14 @@ const RoundTrip = () => {
               {filteredDepartures.length > 0 && (
                 <ul className="suggestions-dropdown">
                   {filteredDepartures.map((airport, index) => (
-                    <li
+                      <li
                       key={index}
-                      onClick={() => setDeparture(airport.airport_iata.iata_code)}
+                      onClick={() => {
+                        setDeparture(`${airport.iata_code} - ${airport.airport_name}`)
+                        setFilteredDepartures([]);  
+                      }}
                     >
+                       <FontAwesomeIcon icon={faPlane} style={{ marginRight: '8px' }} /> 
                       {airport.airport_name} ({airport.iata_code}), {airport.city_name}, {airport.country_name}
                     </li>
                   ))}
@@ -107,6 +124,12 @@ const RoundTrip = () => {
 
             {/* Arrival Input */}
             <div className="col-md-2 ml-5">
+              <div style={{ position: 'absolute', height:'100px' }}>
+                <FontAwesomeIcon 
+                  icon={faLocationDot} 
+                  style={{ position: 'absolute', marginLeft:'8px', left: '10px', top: '19%', transform: 'translateY(-50%)', color: '#333' }}
+                />
+                </div>
               <input
                 type="text"
                 id="arrival"
@@ -122,8 +145,11 @@ const RoundTrip = () => {
                   {filteredArrivals.map((airport, index) => (
                     <li
                       key={index}
-                      onClick={() => setArrival(airport.iata_code)}
+                      onClick={() => {setArrival(`${airport.iata_code} - ${airport.airport_name}`)
+                        setFilteredArrivals([]); }} // Close the dropdown
+                      
                     >
+                      <FontAwesomeIcon icon={faPlane} style={{ marginRight: '8px' }} />
                       {airport.airport_name} ({airport.iata_code}), {airport.city_name}, {airport.country_name}
                     </li>
                   ))}
@@ -182,3 +208,4 @@ const RoundTrip = () => {
 };
 
 export default RoundTrip;
+
