@@ -1151,3 +1151,69 @@ td {
   background-color: #f0f0f0; /* Change background on hover */
 }
 
+
+.main-container-flight h2 {
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
+  
+}
+
+.main-container-flight h3 {
+  font-size: 14px;
+  color: black;
+  font-weight: 700;
+
+}
+
+
+.stop-element{
+      display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+}
+.main-container-flight .stop {
+  font-size: 14px;
+  color: black;
+  font-weight: 700;
+
+}
+.main-container-flight .amount {
+  font-size: 14px;
+  color: black;
+  font-weight: 700;
+
+}
+
+#round-trip-start {
+  padding: 0 15px;
+  /* Adjust padding for alignment */
+}
+
+#round-trip-form-start {
+  margin: 0 auto;
+  /* Center align form on larger screens */
+}
+
+/* Adjust button padding and font size */
+#Search-flight {
+  font-size: 14px;
+  padding: 10px 20px;
+  /* Default padding */
+}
+
+/* Responsive adjustments for button */
+@media (max-width: 768px) {
+  #Search-flight {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  #Search-flight {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
