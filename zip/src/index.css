@@ -1,1 +1,14 @@
 /*  */
+#suggestion , #arrival-suggestion{
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border: 1px solid #ccc; /* Border around the dropdown */
+  position: absolute; /* Make the dropdown appear right below the input */
+  z-index: 1000; /* Ensure the dropdown appears above other content */
+  max-height: 200px; /* Limit height */
+  overflow: hidden;
+  overflow-y: scroll; /* Add scroll if content exceeds height */
+  width: 150%; /* Make it the same width as the input */
+}

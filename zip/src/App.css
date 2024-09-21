@@ -12,16 +12,20 @@
 }
 
 
-#round-trip-start {
-  margin-right: auto;
+#round-trip-start .row {
+  width:100% ;
+  gap: 5px;
+  margin-left: 15px;
 }
-#round-trip-form-start {
-  margin-right: -4%;
+
+.passenger-form .row{
+  gap: 50px;
 }
+
 
 
 .sm-text{
-  font-size: 20px;
+  font-size: 1rem;
 }
 body,
 html {
@@ -34,6 +38,7 @@ html {
 
 /*********NAVBAR CSS***********/
 header {
+  width: 100%;
   margin: 0;
   background-color: white;
 }
@@ -167,11 +172,11 @@ a.panel {
   position: relative;
   width: 100%;
   margin-top: 19px;
-  margin-right: 200%;
   gap: 10px;
   align-items: center;
   height: 200px;
   border-radius: 0 0 10px 10px;
+   box-sizing: border-box;
 
 }
 
@@ -279,8 +284,8 @@ a.panel {
 
 #Search-flight {
   height: 60px;
-  width: 190px;
-  font-size: 1.5rem;
+  width: 150px;
+  font-size: 0.5rem;
   background-color: #ff4600;
   color: white;
   font-weight: 900;
@@ -289,22 +294,27 @@ a.panel {
 
 #Round-trip input[name="departure"] {
   width: auto;
-  margin-right: 5px;
+  
 }
 
 #Round-trip input[name="arrival"] {
   width: 250px;
-  margin-right: 5px;
+  
 }
 
 #Round-trip input[name="departure-date"] {
   width: 200px;
-  margin-right: 5px;
+  
 }
 
 #Round-trip input[name="return-date"] {
   width: 200px;
-  margin-right: 5px;
+  
+}
+
+#Round-trip input[name="travellers"] {
+ margin-right: 5px;
+  
 }
 
 #Round-trip input[name="search"] {
@@ -332,6 +342,8 @@ input {
   font-size: 1rem;
 
 }
+
+
 
 
 
@@ -709,13 +721,17 @@ footer {
 
   .flight-panel {
     width: 100%;
-    margin-right: 100px;
+    
   }
 
-  /* .passenger-form {
-    margin-right: 0px;
-    width: 80%;
-  } */
+  #round-trip-start{
+    width: 100%;
+  }
+
+  .passenger-form {
+    margin-left: 10px;
+    width: 100%;
+  } 
 
 }
 
@@ -727,6 +743,8 @@ footer {
     grid-template-rows: repeat(2, auto);
   }
 }
+
+
 
 
 /********Flight css********/
@@ -851,7 +869,7 @@ td {
 
 
 
-/* 
+/*
 
 .passenger-form {
   width: 100%;
@@ -919,31 +937,119 @@ td {
 
   max-width: 220px;
 
-}
+}*/
 
 
 
 
-@media (min-width: 1200px) {
+@media (max-width: 1800px) {
   .passenger-form .row {
-    gap: 20px;
+    gap: 10px;
 
   }
 
     .passenger-form .col-md-2 {
-    max-width: 220px;
+    width: 180px;
   }
+
+  #Search-flight{
+    height: 50px;
+  }
+
+  #departure{
+    height: 50px;
+  }
+
+  #arrival{
+    height: 50px;
+  }
+
+  #departure-date{
+    height: 50px;
+  }
+
+  #return-date{
+    height: 50px;
+  }
+
+  #travellers{
+    height: 50px;
+  }
+  
+
+
 }
+
+@media screen and (max-width: 1400px) {
+
+  #departure {
+    height: 40px;
+    width: 190px;
+    /* width: 150px; */
+
+  }
+
+  #arrival {
+    height: 40px;
+     width: 190px;
+    /* width: 150px; */
+
+  }
+
+  #departure-date {
+    height: 40px;
+     width: 150px;
+    /* width: 130px; */
+
+  }
+
+  #return-date {
+    height: 40px;
+     width: 150px;
+     margin: 0px 5px 0 0;
+    /* width: 130px; */
+
+  }
+
+  #travellers {
+    height: 40px;
+    width: 60%;
+    /* width: 100px; */
+    
+
+  }
+
+  #Search-flight {
+    height: 40px;
+    width: 80px;
+    font-size: .5rem;
+    margin-left: 5px;
+
+
+  }
+
+  .sm-text{
+    font-size: .7rem;
+  }
+
+  #round-trip-form-start .row{
+    width: 100%;
+  }
+  }
 
 
 @media (max-width: 1200px) {
+  .header{
+    width: 100%;
+  }
   .passenger-form .row {
-    gap: 15px;
+    gap: 5px;
 
   }
 
     .passenger-form .col-md-2 {
-    flex-basis: 30%;
+    display: flex;
+    flex-wrap: wrap;
 
     margin-left: 0;
   }
@@ -952,10 +1058,35 @@ td {
     flex-basis: 100%;
 
   }
+
+  #Search-flight input{
+    width: 5000%;
+    margin: 0 auto;
+    
+    
+  }
+
+  
 }
 
+@media (max-width: 1000px){
+#travellers{
+  width: 100%;
+}
+
+.trips{
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 @media (max-width: 768px) {
+
+  header{
+    width: 100%;
+  }
+
+  
   .passenger-form .row {
     gap: 10px;
 
@@ -972,6 +1103,8 @@ td {
     display: flex;
     justify-content: center;
   }
+
+
 }
 
 @media (max-width: 576px) {
@@ -993,19 +1126,7 @@ td {
   }
 } */
 
-.suggestions-dropdown {
-  list-style-type: none; /* Remove bullets */
-  padding: 0;
-  margin: 0;
-  background-color: white;
-  border: 1px solid #ccc; /* Border around the dropdown */
-  position: absolute; /* Make the dropdown appear right below the input */
-  z-index: 1000; /* Ensure the dropdown appears above other content */
-  max-height: 200px; /* Limit height */
-  overflow: hidden;
-  overflow-y: scroll; /* Add scroll if content exceeds height */
-  width: 150%; /* Make it the same width as the input */
-}
+ 
 
 .suggestions-dropdown::-webkit-scrollbar {
   width: 0px; /* Remove scrollbar for Webkit browsers */

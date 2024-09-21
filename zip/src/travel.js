@@ -529,7 +529,7 @@ const TravelApp = () => {
                 </ul>
               </div>
 
-              <div className="quick-links">
+              {/* <div className="quick-links">
                 <ul className="link-text">
                   <h2>BOOK</h2>
                   <li>Cheap Flights</li>
@@ -581,8 +581,8 @@ const TravelApp = () => {
                   <li>Compassion Exception Policy</li>
                   <li>Connection Protection</li>
                   <li>Consumer Health Data Notice</li>
-                </ul>
-              </div>
+                </ul>--> 
+              </div>*/}
             </div>
           </div>
         </footer>
