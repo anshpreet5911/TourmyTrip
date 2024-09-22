@@ -14,13 +14,19 @@
 
 #round-trip-start .row {
   width:100% ;
-  gap: 5px;
-  margin-left: 15px;
+  gap: 15px;
+ 
 }
 
-.passenger-form .row{
-  gap: 50px;
+#round-trip-form-start {
+  display: flex;
+  flex-wrap: wrap; /* Allows inputs to wrap into a new line when space is limited */
+  gap: 15px; /* Space between inputs */
+  width: 100%;
 }
+
+
+
 
 
 
@@ -176,7 +182,7 @@ a.panel {
   align-items: center;
   height: 200px;
   border-radius: 0 0 10px 10px;
-   box-sizing: border-box;
+   box-sizing: content-box;
 
 }
 
@@ -284,7 +290,7 @@ a.panel {
 
 #Search-flight {
   height: 60px;
-  width: 150px;
+  width: 500%;
   font-size: 0.5rem;
   background-color: #ff4600;
   color: white;
@@ -292,18 +298,18 @@ a.panel {
   border-color: #ff4600;
 }
 
-#Round-trip input[name="departure"] {
-  width: auto;
+#departure{
+  width: 140%;
   
 }
 
-#Round-trip input[name="arrival"] {
-  width: 250px;
+#arrival {
+  width: 140%;
   
 }
 
 #Round-trip input[name="departure-date"] {
-  width: 200px;
+  width : 100%;
   
 }
 
@@ -315,12 +321,6 @@ a.panel {
 #Round-trip input[name="travellers"] {
  margin-right: 5px;
   
-}
-
-#Round-trip input[name="search"] {
-  width: 160px;
-  margin-left: 0.9rem;
-  font-size: 1.3rem;
 }
 
 input {
@@ -639,81 +639,84 @@ footer {
 @media screen and (max-width: 1800px) {
 
   #departure {
-    height: 40px;
+    height: 60px;
     width: 230px;
 
   }
 
   #arrival {
-    height: 40px;
+    height: 60px;
     width: 230px;
 
   }
 
   #departure-date {
-    height: 40px;
+    height: 60px;
     /* width: 130px; */
 
   }
 
   #return-date {
-    height: 40px;
+    height: 60px;
     /* width: 130px; */
 
   }
 
   #travellers {
-    height: 40px;
+    height: 60px;
     width: 100px;
 
   }
 
-  #Search-flight {
-    height: 60px;
-    width: 130px;
-    font-size: .8rem;
+  
 
-
+  .sm-text{
+    font-size: .7rem;
   }
 
 
 }
 
+
+
 @media screen and (max-width: 1520px) {
 
+  .main-container{
+    margin: 0 5%;
+  }
   #departure {
-    height: 40px;
+    height: 60px;
     /* width: 150px; */
 
   }
 
   #arrival {
-    height: 40px;
+    height: 60px;
     /* width: 150px; */
 
   }
 
   #departure-date {
-    height: 40px;
+    height: 60px;
     /* width: 130px; */
 
   }
 
   #return-date {
-    height: 40px;
+    height: 60px;
     /* width: 130px; */
 
   }
 
   #travellers {
-    height: 40px;
+    height: 60px;
     /* width: 100px; */
 
   }
 
   #Search-flight {
-    height: 73px;
-    width: 130px;
+    height: 60px;
+  
     font-size: .8rem;
 
 
@@ -731,18 +734,27 @@ footer {
   .passenger-form {
     margin-left: 10px;
     width: 100%;
+    gap: 5px;
   } 
 
 }
 
-@media screen and (max-width: 1750px) {
+@media screen and (max-width: 1350px){
+  .main-container{
+    margin: 0 2%;
+  }
 
-  .explore-trips {
-    grid-template-columns: repeat(2, 1fr);
-    /* 3 columns */
-    grid-template-rows: repeat(2, auto);
+}
+
+@media screen and (max-width: 1200px){
+   
+  #round-trip-form-start .col-md-2 {
+    flex: 1 1 calc(33.33% - 15px); /* Each input takes 1/3rd of the width */
   }
 }
+
+
+
 
 
 
@@ -940,146 +952,6 @@ td {
 }*/
 
 
-
-
-@media (max-width: 1800px) {
-  .passenger-form .row {
-    gap: 10px;
-
-  }
-
-    .passenger-form .col-md-2 {
-    width: 180px;
-  }
-
-  #Search-flight{
-    height: 50px;
-  }
-
-  #departure{
-    height: 50px;
-  }
-
-  #arrival{
-    height: 50px;
-  }
-
-  #departure-date{
-    height: 50px;
-  }
-
-  #return-date{
-    height: 50px;
-  }
-
-  #travellers{
-    height: 50px;
-  }
-  
-
-
-}
-
-@media screen and (max-width: 1400px) {
-
-  #departure {
-    height: 40px;
-    width: 190px;
-    /* width: 150px; */
-
-  }
-
-  #arrival {
-    height: 40px;
-     width: 190px;
-    /* width: 150px; */
-
-  }
-
-  #departure-date {
-    height: 40px;
-     width: 150px;
-    /* width: 130px; */
-
-  }
-
-  #return-date {
-    height: 40px;
-     width: 150px;
-     margin: 0px 5px 0 0;
-    /* width: 130px; */
-
-  }
-
-  #travellers {
-    height: 40px;
-    width: 60%;
-    /* width: 100px; */
-    
-
-  }
-
-  #Search-flight {
-    height: 40px;
-    width: 80px;
-    font-size: .5rem;
-    margin-left: 5px;
-
-
-  }
-
-  .sm-text{
-    font-size: .7rem;
-  }
-
-  #round-trip-form-start .row{
-    width: 100%;
-  }
-  }
-
-
-@media (max-width: 1200px) {
-  .header{
-    width: 100%;
-  }
-  .passenger-form .row {
-    gap: 5px;
-
-  }
-
-    .passenger-form .col-md-2 {
-    display: flex;
-    flex-wrap: wrap;
-
-    margin-left: 0;
-  }
-
-    .passenger-form .in-row {
-    flex-basis: 100%;
-
-  }
-
-  #Search-flight input{
-    width: 5000%;
-    margin: 0 auto;
-    
-    
-  }
-
-  
-}
-
-@media (max-width: 1000px){
-#travellers{
-  width: 100%;
-}
-
-.trips{
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 @media (max-width: 768px) {
 
   header{
@@ -1185,15 +1057,8 @@ td {
 
 }
 
-#round-trip-start {
-  padding: 0 15px;
-  /* Adjust padding for alignment */
-}
 
-#round-trip-form-start {
-  margin: 0 auto;
-  /* Center align form on larger screens */
-}
+
 
 /* Adjust button padding and font size */
 #Search-flight {
